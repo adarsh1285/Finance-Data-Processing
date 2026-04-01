@@ -6,6 +6,7 @@ const userController = require('../controllers/user.controller');
 const router = express.Router();
 
 router.get('/', authenticateToken, authorizeRoles('admin'), userController.getUsers);
+router.get('/:id', authenticateToken, authorizeRoles('admin'), userController.getUserById);
 router.post('/', authenticateToken, authorizeRoles('admin'), userController.createUser);
 router.put('/:id', authenticateToken, authorizeRoles('admin'), userController.updateUser);
 router.delete('/:id', authenticateToken, authorizeRoles('admin'), userController.deleteUser);

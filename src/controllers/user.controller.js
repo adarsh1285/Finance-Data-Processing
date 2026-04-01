@@ -11,6 +11,23 @@ exports.getUsers = async (req, res, next) => {
   }
 };
 
+exports.getUserById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id).select('-password').populate('role_id', 'role_name');
+
+    if (!user) {
+      const err = new Error('User not found');
+      err.statusCode = 404;
+      return next(err);
+    }
+
+    res.json({ success: true, data: user });
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.createUser = [
   body('name').trim().notEmpty().withMessage('Name is required'),
   body('email').isEmail().withMessage('Valid email is required').normalizeEmail(),
