@@ -2,7 +2,7 @@ const Transaction = require('../models/transaction.model');
 const User = require('../models/user.model');
 const { body, validationResult } = require('express-validator');
 
-// 📝 CREATE TRANSACTION
+// CREATE TRANSACTION
 exports.createTransaction = [
   body('user_id').notEmpty().withMessage('User ID is required'),
   body('amount').isFloat({ gt: 0 }).withMessage('Amount must be a positive number'),
@@ -53,7 +53,7 @@ exports.createTransaction = [
   }
 ];
 
-// 📖 VIEW ALL TRANSACTIONS
+// VIEW ALL TRANSACTIONS
 exports.getTransactions = async (req, res, next) => {
   try {
     const transactions = await Transaction.find()
@@ -70,7 +70,7 @@ exports.getTransactions = async (req, res, next) => {
   }
 };
 
-// 📖 VIEW SINGLE TRANSACTION
+// VIEW SINGLE TRANSACTION
 exports.getTransactionById = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -91,7 +91,7 @@ exports.getTransactionById = async (req, res, next) => {
   }
 };
 
-// 🔍 FILTER TRANSACTIONS
+// FILTER TRANSACTIONS
 exports.filterTransactions = async (req, res, next) => {
   try {
     const { user_id, type, category, startDate, endDate, minAmount, maxAmount } = req.query;
@@ -150,7 +150,7 @@ exports.filterTransactions = async (req, res, next) => {
   }
 };
 
-// ✏️ UPDATE TRANSACTION
+// UPDATE TRANSACTION
 exports.updateTransaction = [
   body('amount').optional().isFloat({ gt: 0 }).withMessage('Amount must be a positive number'),
   body('type').optional().isIn(['income', 'expense', 'transfer']).withMessage('Type must be income, expense, or transfer'),
@@ -198,7 +198,7 @@ exports.updateTransaction = [
   }
 ];
 
-// 🗑️ DELETE TRANSACTION
+// DELETE TRANSACTION
 exports.deleteTransaction = async (req, res, next) => {
   try {
     const { id } = req.params;
