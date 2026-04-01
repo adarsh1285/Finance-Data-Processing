@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
@@ -30,16 +30,15 @@ exports.register = [
     .withMessage('Invalid role ID format'),
 
   // Controller logic
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       // Check for validation errors
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        return res.status(400).json({
-          success: false,
-          message: 'Validation failed',
-          errors: errors.array()
-        });
+        const error = new Error('Validation failed');
+        error.statusCode = 400;
+        error.errors = errors.array();
+        return next(error);
       }
 
       const { name, email, password, role_id } = req.body;
@@ -48,10 +47,9 @@ exports.register = [
       const existingUser = await User.findOne({ email });
 
       if (existingUser) {
-        return res.status(400).json({
-          success: false,
-          message: "User already exists"
-        });
+        const error = new Error('User already exists');
+        error.statusCode = 400;
+        return next(error);
       }
 
       // Hash password
@@ -93,11 +91,89 @@ exports.register = [
 
     } catch (error) {
       console.error(error);
+      next(error);
+    }
+  }
+];
 
-      res.status(500).json({
-        success: false,
-        message: "Server Error"
+exports.login = [
+  // Validation rules
+  body('email')
+    .isEmail()
+    .withMessage('Please provide a valid email')
+    .normalizeEmail(),
+
+  body('password')
+    .notEmpty()
+    .withMessage('Password is required'),
+
+  // Controller logic
+  async (req, res, next) => {
+    try {
+      // Check for validation errors
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        const error = new Error('Validation failed');
+        error.statusCode = 400;
+        error.errors = errors.array();
+        return next(error);
+      }
+
+      const { email, password } = req.body;
+
+      // Find user by email
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        const err = new Error('Invalid credentials');
+        err.statusCode = 401;
+        return next(err);
+      }
+
+      // Check if user is active
+      if (user.status !== 'active') {
+        const err = new Error('Account is not active');
+        err.statusCode = 401;
+        return next(err);
+      }
+
+      // Check password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+
+      if (!isPasswordValid) {
+        const err = new Error('Invalid credentials');
+        err.statusCode = 401;
+        return next(err);
+      }
+
+      // Generate JWT
+      const token = jwt.sign(
+        {
+          id: user._id,
+          role: user.role_id
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: "7d" }
+      );
+
+      // Response
+      res.status(200).json({
+        success: true,
+        message: "Login successful",
+        token,
+        user: {
+          id: user._id,
+          name: user.name,
+          email: user.email,
+          role_id: user.role_id,
+          status: user.status,
+          created_at: user.created_at
+        }
       });
+
+    } catch (error) {
+      console.error(error);
+      next(error);
     }
   }
 ];
