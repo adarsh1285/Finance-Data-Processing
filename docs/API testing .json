@@ -1,0 +1,485 @@
+{
+  "schema_version": "1.0.0",
+  "records": [
+    {
+      "name": "finace data api",
+      "type": "collection",
+      "data": {
+        "variables": {},
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        }
+      },
+      "deleted": false,
+      "collectionId": "",
+      "id": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "description": ""
+    },
+    {
+      "name": "Dashboard api testing ",
+      "type": "collection",
+      "data": {
+        "variables": {},
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        }
+      },
+      "deleted": false,
+      "collectionId": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "id": "06a8c425-0b8a-4b1c-a8a2-c2cbc8b49bba",
+      "description": ""
+    },
+    {
+      "name": "get analysis of the transations",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "06a8c425-0b8a-4b1c-a8a2-c2cbc8b49bba",
+      "rank": "auntit17750773929271",
+      "id": "4ab861bc-ce08-419e-82e1-22c6a3ae667e",
+      "description": ""
+    },
+    {
+      "name": "Transaction",
+      "type": "collection",
+      "data": {
+        "variables": {},
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        }
+      },
+      "deleted": false,
+      "collectionId": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "id": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "description": ""
+    },
+    {
+      "name": "Create transaction only admin",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "auntit17750753859721",
+      "id": "a50c1f06-4b89-49ca-97d5-5789d4a464ec",
+      "description": ""
+    },
+    {
+      "name": "view all the transaction admin + ",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "av",
+      "description": "",
+      "id": "4f694974-5fea-4a13-94ab-0668cde8550f"
+    },
+    {
+      "name": "view single transaction",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "aw",
+      "description": "",
+      "id": "5a4170de-e90f-4592-901a-086c6277e8bd"
+    },
+    {
+      "name": "update transactions by id ",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "ax",
+      "description": "",
+      "id": "5fd89812-c5b4-4548-b4fa-0fe5c7c93fe0"
+    },
+    {
+      "name": "delete transaction by id",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "ay",
+      "description": "",
+      "id": "f95ee70c-7644-45ec-8107-0c4e3becc5ad"
+    },
+    {
+      "name": "filter transaction by id ",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "17e43095-5828-4b9f-bfbb-c5e5d6716e46",
+      "rank": "az",
+      "description": "",
+      "id": "c809a00f-943f-48f5-ab85-9c3c27bbc57d"
+    },
+    {
+      "name": "User crud",
+      "type": "collection",
+      "data": {
+        "variables": {},
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        }
+      },
+      "deleted": false,
+      "collectionId": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "id": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "description": ""
+    },
+    {
+      "name": "create user only admin",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "rank": "auntit17750695930111",
+      "id": "75613911-def4-4377-98ea-a05fedc2b96e",
+      "description": ""
+    },
+    {
+      "name": "get all the users only admin",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "rank": "av",
+      "description": "",
+      "id": "dfdad975-e09b-43da-985c-bc6e80a6cd9f"
+    },
+    {
+      "name": "get user by id only admin",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "rank": "avV",
+      "description": "",
+      "id": "51994584-ecaa-4dbf-b916-c82ac201bd1e"
+    },
+    {
+      "name": "update by id only admin ",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "rank": "aw",
+      "description": "",
+      "id": "bac7d2b8-f530-423d-a64f-44273bd73da2"
+    },
+    {
+      "name": "delete user only admin",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "dfd4a070-548b-4c85-a179-7bdcc39e4c42",
+      "rank": "ax",
+      "description": "",
+      "id": "00a900f1-acdf-4579-b632-c68da45eeb37"
+    },
+    {
+      "name": "user register",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "rank": "auntit17750671243401",
+      "id": "f60af840-160e-411e-8f99-17eb0f06bcb3",
+      "description": ""
+    },
+    {
+      "name": "login",
+      "type": "api",
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "https://app.requestly.io/echo",
+          "method": "GET",
+          "headers": [],
+          "queryParams": [],
+          "body": "",
+          "contentType": "text/plain"
+        },
+        "response": null,
+        "scripts": {
+          "preRequest": "",
+          "postResponse": ""
+        },
+        "auth": {
+          "currentAuthType": "INHERIT",
+          "authConfigStore": {}
+        },
+        "examples": []
+      },
+      "deleted": false,
+      "collectionId": "06715c4a-5967-4265-ab77-ba9d156f9f4d",
+      "rank": "av",
+      "description": "",
+      "id": "66ced23d-d7ac-4cdf-960f-277e07e849ad"
+    }
+  ]
+}

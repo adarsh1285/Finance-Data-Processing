@@ -1,0 +1,338 @@
+{
+  "info": {
+    "_postman_id": "81f31954-62d8-4587-b763-aea7bb75126b",
+    "name": "finace data api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "ad74ce07-50e7-475d-b404-5d7f62f753f4",
+      "name": "Dashboard api testing ",
+      "item": [
+        {
+          "id": "05a4caa5-6add-4b46-93a8-a09933cb7a70",
+          "name": "get analysis of the transations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "variable": []
+    },
+    {
+      "id": "3328edb2-5a49-45f0-bd6a-fd8a1258ad34",
+      "name": "Transaction",
+      "item": [
+        {
+          "id": "a156ebb6-3de7-4260-a9ea-0479b697c8ab",
+          "name": "Create transaction only admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "28fe4373-db0a-474d-bb20-e75a531e189e",
+          "name": "view all the transaction admin + ",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "41fa0591-e591-4c78-9ffc-cae383a7fe49",
+          "name": "view single transaction",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "35380a39-718d-438f-9c43-4c682b6808db",
+          "name": "update transactions by id ",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "302aac2f-0d52-4b7a-bd2b-b06c43dbfe34",
+          "name": "delete transaction by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "397ecb8b-e1e4-416b-8277-75d7effaf601",
+          "name": "filter transaction by id ",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "variable": []
+    },
+    {
+      "id": "6adeb1ca-8be3-4650-af6c-ee636b186c26",
+      "name": "User crud",
+      "item": [
+        {
+          "id": "8ee56850-fb5c-4aa4-bd74-832de8775b7f",
+          "name": "create user only admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "5b5fab14-0595-4175-9811-bb1f34385d01",
+          "name": "get all the users only admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "5487e0b8-aa08-440b-86ec-725167bebb94",
+          "name": "get user by id only admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "659a3b8e-7d1e-41ee-93d4-57728585ed41",
+          "name": "update by id only admin ",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "e4409c9b-3cfd-488d-8dbf-0b96650c8bd9",
+          "name": "delete user only admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://app.requestly.io/echo",
+              "host": [
+                "app",
+                "requestly",
+                "io"
+              ],
+              "path": [
+                "echo"
+              ],
+              "protocol": "https"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "variable": []
+    },
+    {
+      "id": "be12e8ac-1451-43dd-92e9-97f2f4b9d447",
+      "name": "user register",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://app.requestly.io/echo",
+          "host": [
+            "app",
+            "requestly",
+            "io"
+          ],
+          "path": [
+            "echo"
+          ],
+          "protocol": "https"
+        }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "bf4fe3da-9de9-4365-a182-51d49367837d",
+      "name": "login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://app.requestly.io/echo",
+          "host": [
+            "app",
+            "requestly",
+            "io"
+          ],
+          "path": [
+            "echo"
+          ],
+          "protocol": "https"
+        }
+      },
+      "response": [],
+      "event": []
+    }
+  ]
+}

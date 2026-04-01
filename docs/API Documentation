@@ -1,0 +1,396 @@
+# Finance Dashboard Backend API Documentation
+
+## Base URL
+
+Local Development
+
+```
+http://localhost:5000/api
+```
+
+Production (if deployed)
+
+```
+https://finance-data-processing-pnk3.onrender.com/api
+```
+
+---
+
+# Authentication
+
+Most endpoints require authentication using JSON Web Tokens (JWT).
+
+After logging in, include the token in the request headers.
+
+Header format:
+
+```
+Authorization: Bearer <your_token>
+```
+
+Example:
+
+```
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+```
+
+---
+
+# User Roles
+
+The system supports role-based access control.
+
+| Role    | Description                                                       |
+| ------- | ----------------------------------------------------------------- |
+| Viewer  | Can access dashboard summaries only                               |
+| Analyst | Can view financial records and dashboard data                     |
+| Admin   | Can manage users and perform full CRUD operations on transactions |
+
+---
+
+# Authentication APIs
+
+## Register User
+
+Create a new user account.
+
+Endpoint
+
+```
+POST /api/auth/register
+```
+
+Request Body
+
+```
+{
+  "name": "Aman",
+  "email": "aman@example.com",
+  "password": "123456"
+}
+```
+
+Response
+
+```
+{
+  "message": "User registered successfully"
+}
+```
+
+---
+
+## Login User
+
+Authenticate a user and return a JWT token.
+
+Endpoint
+
+```
+POST /api/auth/login
+```
+
+Request Body
+
+```
+{
+  "email": "aman@example.com",
+  "password": "123456"
+}
+```
+
+Response
+
+```
+{
+  "token": "jwt_token_here"
+}
+```
+
+---
+
+# Transaction APIs
+
+These endpoints manage financial records.
+
+---
+
+## Create Transaction
+
+Creates a new financial record.
+
+Endpoint
+
+```
+POST /api/transactions
+```
+
+Access Level
+
+Admin only
+
+Headers
+
+```
+Authorization: Bearer token
+```
+
+Request Body
+
+```
+{
+  "amount": 5000,
+  "type": "income",
+  "category": "salary",
+  "date": "2026-04-01",
+  "notes": "Monthly salary"
+}
+```
+
+Response
+
+```
+{
+  "_id": "transaction_id",
+  "amount": 5000,
+  "type": "income",
+  "category": "salary",
+  "date": "2026-04-01",
+  "notes": "Monthly salary"
+}
+```
+
+---
+
+## Get Transactions
+
+Returns a list of financial transactions.
+
+Endpoint
+
+```
+GET /api/transactions
+```
+
+Access Level
+
+Analyst, Admin
+
+Query Parameters
+
+| Parameter | Description        |
+| --------- | ------------------ |
+| type      | income or expense  |
+| category  | filter by category |
+| startDate | filter from date   |
+| endDate   | filter until date  |
+
+Example
+
+```
+GET /api/transactions?type=expense
+```
+
+Response
+
+```
+[
+  {
+    "_id": "transaction_id",
+    "amount": 500,
+    "type": "expense",
+    "category": "food",
+    "date": "2026-04-01"
+  }
+]
+```
+
+---
+
+## Update Transaction
+
+Updates an existing financial record.
+
+Endpoint
+
+```
+PUT /api/transactions/:id
+```
+
+Access Level
+
+Admin only
+
+Request Body
+
+```
+{
+  "amount": 600
+}
+```
+
+Response
+
+```
+{
+  "message": "Transaction updated successfully"
+}
+```
+
+---
+
+## Delete Transaction
+
+Deletes a financial record.
+
+Endpoint
+
+```
+DELETE /api/transactions/:id
+```
+
+Access Level
+
+Admin only
+
+Response
+
+```
+{
+  "message": "Transaction deleted successfully"
+}
+```
+
+---
+
+# Dashboard APIs
+
+Dashboard APIs provide financial analytics and summaries.
+
+---
+
+## Get Financial Summary
+
+Returns total income, total expenses, and net balance.
+
+Endpoint
+
+```
+GET /api/dashboard/summary
+```
+
+Access Level
+
+Viewer, Analyst, Admin
+
+Response
+
+```
+{
+  "totalIncome": 20000,
+  "totalExpense": 8000,
+  "balance": 12000
+}
+```
+
+---
+
+## Category Summary
+
+Returns total expenses grouped by category.
+
+Endpoint
+
+```
+GET /api/dashboard/category-summary
+```
+
+Response
+
+```
+[
+  {
+    "category": "food",
+    "total": 2000
+  },
+  {
+    "category": "shopping",
+    "total": 3000
+  }
+]
+```
+
+---
+
+## Recent Transactions
+
+Returns the most recent financial transactions.
+
+Endpoint
+
+```
+GET /api/dashboard/recent
+```
+
+Response
+
+```
+[
+  {
+    "_id": "transaction_id",
+    "amount": 500,
+    "type": "expense",
+    "category": "food",
+    "date": "2026-04-01"
+  }
+]
+```
+
+---
+
+# Error Responses
+
+Validation Error
+
+```
+{
+  "error": "Invalid input data"
+}
+```
+
+Unauthorized Request
+
+```
+{
+  "error": "Unauthorized"
+}
+```
+
+Forbidden Access
+
+```
+{
+  "error": "Access denied"
+}
+```
+
+---
+
+# Example API Flow
+
+1. Register a user using the register endpoint
+2. Login to receive a JWT token
+3. Include the token in the Authorization header
+4. Access protected APIs such as transactions and dashboard
+
+---
+
+# API Testing
+
+All APIs can be tested using the included Postman collection located in the `/docs` directory.
+
+---
+
+# Notes
+
+This backend was developed as part of a technical assessment to demonstrate backend architecture, API design, role-based access control, and financial data processing.
